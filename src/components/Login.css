@@ -1,0 +1,24 @@
+#Titulo_Login{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 96px;
+    color: black;
+    line-height: normal; 
+}
+
+#Formulario{
+    width: 481px;
+        height: 680px;
+        box-shadow: 4px 4px 10px 0 rgb(0 0 0 / 0.31);
+        background-color: #ffffff;
+}
+#senha{
+    width: 361px;
+    height: 67px;
+}
+#gmail{
+    width: 361px;
+    height: 67px;
+}
