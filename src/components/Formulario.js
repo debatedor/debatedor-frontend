@@ -1,10 +1,10 @@
 import Axios from "axios";
 import "./Login.css"
 import React, { useState } from 'react';
-import"./Login.css"
+import "./Login.css"
 
 
-function Formulario(){
+function Formulario() {
     const [values, setValues] = useState({ gmail: '', senha: '' });
     const [gmail, setGmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -30,34 +30,38 @@ function Formulario(){
 
 
     return (
-        
-        <form onSubmit={handleSubmit} className="login-form">
-            <div id = "Formulario">
-                <label htmlFor="gmail">gmail de Usuário:</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="gmail"
-                    name='gmail'
-                    onChange={handleChangeValues}
-                    required
-                />
-            
-            <div>
-                <label htmlFor="senha">Senha:</label>
-                <input
-                    type="text"
-                    name='senha'
-                    className="form-control"
-                    id="senha"
-                    onChange={handleChangeValues}
-                    required
-                />
-            </div>
-            <button type="submit">Entrar</button>
+
+        <form onSubmit={handleSubmit} className="login-form" id="formulario_geral">
+            <div id="Formulario">
+                <h2 id="Formulario_titulo">Bem Vindo de Volta </h2>
+                <div id="meio_questionario">
+                    <div>
+                        <label htmlFor="gmail_texto">Gmail de Usuário:</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="gmail"
+                            name='gmail'
+                            onChange={handleChangeValues}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="senha_texto">Senha:</label>
+                        <input
+                            type="text"
+                            name='senha'
+                            className="form-control"
+                            id="senha"
+                            onChange={handleChangeValues}
+                            required
+                        />
+                    </div>
+                </div>
+                <button type="submit" id="butao_enviar" >Continuar</button>
             </div>
         </form>
-  
+
     );
 }
 

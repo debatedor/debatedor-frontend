@@ -6,9 +6,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div>
         <Header/>
+        </div>
       </header>
-      <body>
+      <body id = "App-body">
         <Formulario/>
       </body>
       <footer>

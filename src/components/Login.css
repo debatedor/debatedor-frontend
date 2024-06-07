@@ -1,24 +1,64 @@
-#Titulo_Login{
+#Titulo_Login {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
     font-size: 96px;
     color: black;
-    line-height: normal; 
+    line-height: normal;
 }
 
-#Formulario{
+#Formulario {
     width: 481px;
-        height: 680px;
-        box-shadow: 4px 4px 10px 0 rgb(0 0 0 / 0.31);
-        background-color: #ffffff;
+    height: 680px;
+    box-shadow: 0px 0px 4px 6px rgba(0, 0, 0, 0.31);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    border-radius: 13px;
+    border-color: #000000;
 }
-#senha{
-    width: 361px;
-    height: 67px;
+
+#meio_questionario{
+    margin-left:50%;
+    margin-right:50%;
 }
-#gmail{
-    width: 361px;
-    height: 67px;
+
+#Formulario_titulo {
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: -0.0625em;
+    line-height: 30px;
+    color: #000000;
+    text-align: center;
+
 }
+
+
+#gmail,#senha {
+    padding: 15px 90px 15px 150px;
+    display: block;   
+    border-radius: 10px;
+}
+
+#butao_enviar {
+    display: flex;
+    align-self: center;
+    text-align: center;
+    padding: 20px 155px 20px 155px;
+    margin-top: 5%;
+    margin-left: 50%;
+    margin-right: 50%;
+    border-radius: 16px;
+    background-color: #0269FE;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: normal;
+    color: #ffffff;
+}
+
