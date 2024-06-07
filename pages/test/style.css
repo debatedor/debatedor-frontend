@@ -1,0 +1,64 @@
+#headerMain {
+    width: 1440px;
+    height: 92px;
+    background-color: #000f46;
+}
+
+#burgerRect {
+    left: 82px;
+    top: 19px;
+    width: 48px;
+    height: 48px;
+    border-radius: 9px;
+    background-color: #ffffff;
+}
+
+.burgerLine {
+    width: 33px;
+    height: 0px;
+    color: #ffffff;
+}
+
+#one {
+    left: 10px;
+    top: 10px;
+    position: relative;
+}
+
+#two {
+    left: 10px;
+    top: 20px;
+    position: relative;
+}
+
+#three {
+    left: 10px;
+    top: 30px;
+    position: relative;
+}
+
+#searchBar {
+    left: 476px;
+    top: 22px;
+    width: 471px;
+    height: 47px;
+    background-color: #ffffff;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: normal;
+    color: #000000;
+}
+
+#Title {
+    left: 3000px;
+    top: 13px;
+    width: 286px;
+    height: 55px;
+    font-family: "Playfair Display";
+    font-weight: 900;
+    font-size: 55px;
+    letter-spacing: -0.125em;
+    line-height: 55px;
+    color: #ffffff;
+}

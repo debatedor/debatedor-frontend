@@ -1,7 +1,14 @@
 import Axios from "axios";
 import React, { useState } from 'react';
-import "./feed.css"
+import Header from "./components/Header";
+import "./feed.css";
 
-function Header() {
-    
+function Feed() {
+    return (
+        <header>
+            <Header/>
+        </header>
+    );
 }
+
+export default Feed;

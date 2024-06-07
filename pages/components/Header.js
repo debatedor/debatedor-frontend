@@ -7,12 +7,13 @@ function Header() {
 
     return (
         <div id="headerMain">
-            <rect id="headerRect">
-                <rect id="burgerRect" onClick={openBurger()}>
-
-                </rect>
-                <h1 id="Title">Debatedor</h1>
+            <rect id="burgerRect" onClick={openBurger()}>
+                <svg class="burgerLine" id="one"></svg>
+                <svg class="burgerLine" id="two"></svg>
+                <svg class="burgerLine" id="three"></svg>
             </rect>
+            <input id="searchBar">buscar</input>
+            <span id="Title">Debatedor</span>
         </div>
     );
 }
