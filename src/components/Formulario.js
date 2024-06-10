@@ -34,7 +34,7 @@ function Formulario() {
 
     return (
 
-        <div>
+        <div >
             <form onSubmit={handleSubmit} className="login-form" id="formulario_geral">
                 <div id="Formulario">
                     <h2 id="Formulario_titulo">Bem Vindo de Volta</h2>
@@ -77,6 +77,9 @@ function Formulario() {
                         <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="logo_link">
                             <img src={FacebookLogo} alt="Facebook Logo" class="logo" />
                         </a>
+                    </div>
+                    <div id="cadastro">
+                        <hr className="line" /><a href="cada"><p>Nao Possuo Cadastro</p></a><hr className="line" />
                     </div>
 
                 </div>
