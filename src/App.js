@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
-import Formulario from './components/Formulario';
+//import FormularioLogin from './components/FormularioLogin';
+import FormularioRegistro from './components/FormularioRegistro'
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         </div>
       </header>
       <body id = "App-body">
-        <Formulario/>
+        <FormularioRegistro></FormularioRegistro>
       </body>
       <footer>
 

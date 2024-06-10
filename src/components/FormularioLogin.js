@@ -1,13 +1,12 @@
 import Axios from "axios";
 import "./Login.css"
 import React, { useState } from 'react';
-import "./Login.css"
 import GoogleLogo from "../image/Google.png"
 import AppleLogo from "../image/Apple.png"
 import FacebookLogo from "../image/Facebook.png"
 
 
-function Formulario() {
+function FormularioLogin() {
     const [values, setValues] = useState({ gmail: '', senha: '' });
     const [gmail, setGmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -90,4 +89,4 @@ function Formulario() {
 }
 
 
-export default Formulario
+export default FormularioLogin
