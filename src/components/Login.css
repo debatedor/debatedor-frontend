@@ -6,59 +6,130 @@
     font-size: 96px;
     color: black;
     line-height: normal;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 #Formulario {
     width: 481px;
-    height: 680px;
+    height: 580px;
     box-shadow: 0px 0px 4px 6px rgba(0, 0, 0, 0.31);
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
     align-items: center;
     border-radius: 13px;
     border-color: #000000;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-#meio_questionario{
-    margin-left:50%;
-    margin-right:50%;
+#meio_questionario {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 #Formulario_titulo {
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 36px;
     letter-spacing: -0.0625em;
-    line-height: 30px;
+    line-height: 1.2;
     color: #000000;
     text-align: center;
-
+    margin-bottom: 20px;
 }
 
-
-#gmail,#senha {
-    padding: 15px 90px 15px 150px;
-    display: block;   
+#input_gmail,
+#input_senha {
+    width: 100%;
+    padding: 15px;
+    display: block;
     border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#senha_texto,
+#gmail_texto {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: normal;
+    color: #757575;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#continue {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#continue hr.line {
+    background-color: #ddd;
+    flex: 1;
+    height: 1px;
+    border: none;
+    margin: 0 10px;
+}
+
+#continue p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: normal;
+    color: #757575;
+    margin: 0;
+}
+
+#div_senha {
+    margin-top: 5%;
+    width: 100%;
+}
+
+#esqueceu_senha {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: normal;
+    text-align: right;
+    text-decoration: underline;
+    color: #0269fe;
+    margin-top: 5px;
 }
 
 #butao_enviar {
     display: flex;
-    align-self: center;
-    text-align: center;
-    padding: 20px 155px 20px 155px;
-    margin-top: 5%;
-    margin-left: 50%;
-    margin-right: 50%;
+    justify-content: center;
+    width: 100%;
+    padding: 4vh;
+    margin-top: 0.5vh;
     border-radius: 16px;
     background-color: #0269FE;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 20px;
     line-height: normal;
     color: #ffffff;
+    cursor: pointer;
+    border: none;
 }
 
+#imagens_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_link {
+    margin: 1vh 3vh 1vh 3vh;
+}
+
+.logo {
+    width: 90%;
+    height: auto;
+    margin-top: 3vh;
+}

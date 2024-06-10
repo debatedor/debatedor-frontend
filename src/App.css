@@ -3,6 +3,7 @@
   align-content: center;
   flex-direction: column;
   flex-wrap: wrap;
+  height: 140vh;
 }
 .App-logo {
   height: 40vmin;
@@ -18,7 +19,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
- 
+
   font-size: calc(10px + 2vmin);
   color: white;
 }

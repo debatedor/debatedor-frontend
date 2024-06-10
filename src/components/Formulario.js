@@ -2,6 +2,9 @@ import Axios from "axios";
 import "./Login.css"
 import React, { useState } from 'react';
 import "./Login.css"
+import GoogleLogo from "../image/Google.png"
+import AppleLogo from "../image/Apple.png"
+import FacebookLogo from "../image/Facebook.png"
 
 
 function Formulario() {
@@ -31,36 +34,54 @@ function Formulario() {
 
     return (
 
-        <form onSubmit={handleSubmit} className="login-form" id="formulario_geral">
-            <div id="Formulario">
-                <h2 id="Formulario_titulo">Bem Vindo de Volta </h2>
-                <div id="meio_questionario">
-                    <div>
-                        <label htmlFor="gmail_texto">Gmail de Usuário:</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="gmail"
-                            name='gmail'
-                            onChange={handleChangeValues}
-                            required
-                        />
+        <div>
+            <form onSubmit={handleSubmit} className="login-form" id="formulario_geral">
+                <div id="Formulario">
+                    <h2 id="Formulario_titulo">Bem Vindo de Volta</h2>
+                    <div id="meio_questionario">
+                        <div id="div_gmail">
+                            <label htmlFor="input_gmail" id="gmail_texto">Gmail de Usuário:</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="input_gmail"
+                                name="input_gmail"
+                                onChange={handleChangeValues}
+                                required
+                            />
+                        </div>
+                        <div id="div_senha">
+                            <label htmlFor="input_senha" id="senha_texto">Senha:</label>
+                            <input
+                                type="password"
+                                name="input_senha"
+                                className="form-control"
+                                id="input_senha"
+                                onChange={handleChangeValues}
+                                required
+                            />
+                            <p id="esqueceu_senha"><a href="url">Esqueceu a senha?</a></p>
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="senha_texto">Senha:</label>
-                        <input
-                            type="text"
-                            name='senha'
-                            className="form-control"
-                            id="senha"
-                            onChange={handleChangeValues}
-                            required
-                        />
+                    <button type="submit" id="butao_enviar">Continuar</button>
+                    <div id="continue">
+                        <hr className="line" /><p>Ou Continue Com</p><hr className="line" />
                     </div>
+                    <div id= "imagens_div">
+                        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="logo_link">
+                            <img src={GoogleLogo} alt="Google Logo" class="logo" />
+                        </a>
+                        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="logo_link">
+                            <img src={AppleLogo} alt="Apple Logo" class="logo" />
+                        </a>
+                        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="logo_link">
+                            <img src={FacebookLogo} alt="Facebook Logo" class="logo" />
+                        </a>
+                    </div>
+
                 </div>
-                <button type="submit" id="butao_enviar" >Continuar</button>
-            </div>
-        </form>
+            </form>
+        </div>
 
     );
 }
