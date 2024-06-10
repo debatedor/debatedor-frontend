@@ -30,6 +30,28 @@ function FormularioRegistro() {
         }))
     };
 
+    const validarDataNascimento = () => {
+        var inputDataNascimento = document.getElementById('input_dataNascimento');
+        var dataSelecionada = new Date(inputDataNascimento.value);
+        var dataAtual = new Date();
+        var dataMinima = new Date(dataAtual.getFullYear() - 18, dataAtual.getMonth(), dataAtual.getDate());
+
+        if (dataSelecionada > dataMinima) {
+            alert("Você precisa ter pelo menos 18 anos para prosseguir.");
+            inputDataNascimento.value = '';
+        } else {
+            // Cria um evento simulado com os valores necessários para handleChangeValues
+            var event = {
+                target: {
+                    name: inputDataNascimento.id,
+                    value: inputDataNascimento.value
+                }
+            };
+            // Chama a função handleChangeValues com o evento simulado
+            handleChangeValues(event);
+        }
+    };
+
 
 
     return (
@@ -37,8 +59,32 @@ function FormularioRegistro() {
         <div >
             <form onSubmit={handleSubmit} className="login-form" id="formulario_geral">
                 <div id="Formulario">
-                    <h2 id="Formulario_titulo">Bem Vindo de Volta</h2>
+                    <h2 id="Formulario_titulo">Seja  Bem Vindo</h2>
                     <div id="meio_questionario">
+                        <div class="div_dupla">
+                            <div>
+                                <label htmlFor="input_nome" id="nome_texto">Nome:</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="input_nome"
+                                    name="input_nome"
+                                    onChange={handleChangeValues}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="input_sobreNome" id="sobreNome_texto">Sobre Nome:</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="input_sobreNome"
+                                    name="input_sobreNome"
+                                    onChange={handleChangeValues}
+                                    required
+                                />
+                            </div>
+                        </div>
                         <div id="div_gmail">
                             <label htmlFor="input_gmail" id="gmail_texto">Gmail de Usuário:</label>
                             <input
@@ -60,10 +106,33 @@ function FormularioRegistro() {
                                 onChange={handleChangeValues}
                                 required
                             />
-                            <p id="esqueceu_senha"><a href="url">Esqueceu a senha?</a></p>
+                        </div>
+                        <div class="div_dupla">
+                            <div>
+                                <label htmlFor="input_dataNascimento" id="dataNascimento_texto">Data de Nascimento:</label>
+                                <input
+                                    type="date"
+                                    className="form-control"
+                                    id="input_dataNascimento"
+                                    name="input_dataNascimento"
+                                    onChange={validarDataNascimento}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="input_genero" id="genero_texto">Genero:</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="input_genero"
+                                    name="input_genero"
+                                    onChange={handleChangeValues}
+                                    required
+                                />
+                            </div>
                         </div>
                     </div>
-                    <button type="submit" id="butao_enviar">Continuar</button>
+                    <button type="submit" id="butao_criar">Criar</button>
                     <div id="continue">
                         <hr className="line" /><p>Ou Continue Com</p><hr className="line" />
                     </div>
@@ -79,9 +148,9 @@ function FormularioRegistro() {
                         </a>
                     </div>
                     <div id="cadastro">
-                        <hr className="line" /><a href="cada"><p>Nao Possuo Cadastro</p></a><hr className="line" />
+                        <hr className="line" /><a href="conta"><p>Possuo uma conta</p></a><hr className="line" />
                     </div>
-
+                    
                 </div>
             </form>
         </div>
