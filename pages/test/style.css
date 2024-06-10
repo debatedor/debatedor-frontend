@@ -1,47 +1,67 @@
+body {
+    margin:0px;
+}
+
 #headerMain {
+    position:sticky;
+    top:0px;
+    left:0px;
+
+    margin:0px;
+    border:0px;
+    padding:0px;
+
     width: 1440px;
     height: 92px;
     background-color: #000f46;
 }
 
 #burgerRect {
-    left: 82px;
-    top: 19px;
-    width: 48px;
-    height: 48px;
+    border-style:solid;
+    border-color:gray;
+    position: absolute;
+    left: 5%;
+    top: 30px;
+    width: 24px;
+    height: 24px;
     border-radius: 9px;
-    background-color: #ffffff;
 }
 
 .burgerLine {
     width: 33px;
-    height: 0px;
-    color: #ffffff;
+    height: 3px;
+    position:absolute;
+    color:gray;
 }
 
 #one {
-    left: 10px;
-    top: 10px;
-    position: relative;
+    left: 5px;
+    top: 4px;
 }
 
 #two {
-    left: 10px;
-    top: 20px;
-    position: relative;
+    left: 5px;
+    top: 15px;
 }
 
 #three {
-    left: 10px;
-    top: 30px;
-    position: relative;
+    left: 5px;
+    top: 26px;
+}
+
+.burgerLine line {
+    stroke:gray;
+    stroke-width:5px;
 }
 
 #searchBar {
-    left: 476px;
-    top: 22px;
+    position: relative;
+    left: 25%;
+    top: 0px;
+    border-radius: 5px;
+
     width: 471px;
-    height: 47px;
+    height: 25px;
     background-color: #ffffff;
     font-family: Poppins;
     font-weight: 400;
@@ -51,14 +71,18 @@
 }
 
 #Title {
-    left: 3000px;
+    position: relative;
+    left: 30%;
     top: 13px;
+
     width: 286px;
     height: 55px;
+
     font-family: "Playfair Display";
     font-weight: 900;
     font-size: 55px;
     letter-spacing: -0.125em;
     line-height: 55px;
+
     color: #ffffff;
 }
