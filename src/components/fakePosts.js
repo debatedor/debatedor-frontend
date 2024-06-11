@@ -18,7 +18,7 @@ export const fakePosts = [
       date: '2024-05-23',
       title: 'Título 2',
       link: 'home/lorem/ipsum2',
-      content: 'Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.Nunc est lorem, pharetra at porttitor eget.',
+      content: 'Nunc est lorem, pharetra at porttitor eget.',
       upvotes: 234,
       downvotes: 34,
     },

@@ -52,8 +52,6 @@ function FormularioRegistro() {
         }
     };
 
-
-
     return (
 
         <div >

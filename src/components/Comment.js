@@ -8,7 +8,7 @@ export default function Comment({ comment }) {
   const { upvotes, downvotes, userVote, handleVote } = useVote(comment.upvotes, comment.downvotes, comment.id, 'comments');
 
   const handleCommentClick = () => {
-    navigate(`/post/${comment.id}`);
+    navigate(`/post/:id`);
   };
 
   return (
@@ -30,7 +30,7 @@ export default function Comment({ comment }) {
           <button className={commentStyle.downvoteButton} onClick={() => handleVote('downvote')}>⬇</button>
           <span>{comment.downvotes}</span>
         </div>
-        <button className={commentStyle.commentButton} onClick={handleCommentClick}>🗨️</button> 
+        {/* <button className={commentStyle.commentButton} onClick={handleCommentClick}>🗨️</button>  */}
       </div>
     </div>
   );
