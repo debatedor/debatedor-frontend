@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Header from "./components/Header.js";
 import Post from "./components/Post.js";
 import './App.css'
+import Feed from "./components/Feed.js";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Header/>
       </header>
       <article>
-        <Post/>
+        <Feed />
       </article>
       <footer>
 
