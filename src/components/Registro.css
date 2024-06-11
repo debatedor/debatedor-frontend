@@ -1,0 +1,189 @@
+
+#Titulo_Login {
+    font-family: "Playfair Display", serif;
+    margin-top: -1vh ;
+    margin-bottom: 4vh;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 96px;
+    color: black;
+    line-height: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#Formulario {
+    width: 481px;
+    height: 100vh;
+    margin-top: 2vh;
+    box-shadow: 0px 0px 4px 6px rgba(0, 0, 0, 0.31);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 13px;
+    border-color: #000000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#meio_questionario {
+    width: 100%;
+    margin-bottom: 20px;
+    
+}
+
+#Formulario_titulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: -0.0625em;
+    line-height: 1.2;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#input_gmail,#input_senha {
+    width: 100%;
+    padding: 15px;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #b6b6b6;
+    box-shadow: 0px 0px 4px 6px rgba(71, 71, 71, 0.31);
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#senha_texto,
+#gmail_texto {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 2.3vh;
+    line-height: normal;
+    color: #757575;
+    margin-bottom: 5px;
+    display: block;
+}
+.div_dupla{
+    display: flex;
+    justify-content: space-between;
+}
+
+#input_nome,#input_sobreNome,#input_dataNascimento ,#input_genero{
+    width: 100%;
+    padding: 15px;
+    display:flex;
+    border-radius: 10px;
+    border: 1px solid #b6b6b6;
+    box-shadow: 0px 0px 4px 6px rgba(71, 71, 71, 0.31);
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#nome_texto,
+#sobreNome_texto ,#dataNascimento_texto,#genero_texto{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 2.3vh;
+    line-height: normal;
+    color: #757575;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#continue {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#continue hr.line {
+    background-color: #9b9b9b;
+    flex: 1;
+    height: 1px;
+    border: none;
+    margin: 0 10px;
+}
+
+#continue p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: normal;
+    color: #757575;
+    margin: 0;
+    text-align: center;
+}
+
+#div_senha {
+    margin-top: 5%;
+    width: 100%;
+}
+
+
+#butao_criar {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    padding: 2.3vh;
+    margin-top: 0.5vh;
+    border-radius: 16px;
+    background-color: #0269FE;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: normal;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+}
+
+#imagens_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_link {
+    margin: 1vh 3vh 1vh 3vh;
+}
+
+.logo {
+    width: 90%;
+    height: auto;
+    margin-top: 3vh;
+}
+
+#cadastro {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 0vh;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 3vh;
+    line-height: normal;
+    text-align: center;
+    text-decoration: underline;
+    color: #0269fe;
+        
+}
+
+#cadastro hr.line {
+    background-color: #9b9b9b;
+    flex: 1;
+    height: 0.1vh;
+    border: none;
+    margin: 0 2vh;
+}
+
+#cadastro p{
+     font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 2.4vh;
+    line-height: normal;
+    margin: 0;
+    text-align: center;
+}
