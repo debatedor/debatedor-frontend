@@ -1,0 +1,80 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postCard {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.postUserInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.postDate {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.postTitle {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.postLink {
+  color: #1a0dab;
+  text-decoration: none;
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+
+.postContent {
+  margin-bottom: 20px;
+}
+
+.postFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postVotes {
+  display: flex;
+  align-items: center;
+}
+
+.upvoteButton,
+.downvoteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.commentButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

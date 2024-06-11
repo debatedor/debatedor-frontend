@@ -30,8 +30,6 @@ function Formulario() {
         }))
     };
 
-
-
     return (
 
         <div >
@@ -85,7 +83,6 @@ function Formulario() {
                 </div>
             </form>
         </div>
-
     );
 }
 
