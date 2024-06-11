@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -17,6 +18,10 @@ function App() {
         </header>
         <div className="App-body">
          {<Usuario />}
+          <Routes>
+            <Route path="/" element={<Formulario />} />
+            <Route path="/post/:id" element={<DetailPostWrapper />} />
+          </Routes>
         </div>
         <footer>
         </footer>
