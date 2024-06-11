@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import FormularioLogin from './pages/FormularioLogin.js';
-import FormularioRegistro from './pages/FormularioRegistro.js';
+import FormularioRegistro from './pages/FormularioRegistro';
 import DetailPostWrapper from './components/DetailPostWrapper';
 import CommentDetailPage from './components/Comment';
 import Usuario from "./pages/Usuario.js"
@@ -17,9 +17,8 @@ function App() {
           <Header />
         </header>
         <div className="App-body">
-         {<Usuario />}
           <Routes>
-            <Route path="/" element={<Formulario />} />
+            <Route path="/" element={<FormularioLogin />} />
             <Route path="/post/:id" element={<DetailPostWrapper />} />
           </Routes>
         </div>
