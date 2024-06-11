@@ -1,0 +1,30 @@
+/* Adicione estas regras de estilo para garantir que o link de logout esteja estilizado corretamente */
+#link_sair {
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#link_sair:hover {
+    background-color: #e0e0e0;
+}
+
+#botao_excluir {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#botao_excluir:hover {
+    background-color: darkred;
+}

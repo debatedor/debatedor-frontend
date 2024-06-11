@@ -1,37 +1,44 @@
-import Axios from "axios";
-import "./Login.css"
 import React, { useState } from 'react';
+import Axios from 'axios';
+import "../css/Login.css";
+import { useNavigate } from 'react-router-dom';
 import GoogleLogo from "../image/Google.png"
-import AppleLogo from "../image/Apple.png"
 import FacebookLogo from "../image/Facebook.png"
-
+import AppleLogo from "../image/Apple.png"
 
 function FormularioLogin() {
     const [values, setValues] = useState({ gmail: '', senha: '' });
-    const [gmail, setGmail] = useState('');
-    const [senha, setSenha] = useState('');
+    const navigate = useNavigate(); // updated the variable name to 'navigate' to follow conventions
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        Axios.post("http://localhost:3001/register", {
+        Axios.post("http://localhost:3001/login", {
             gmail: values.gmail,
             senha: values.senha
         }).then((response) => {
-            console.log(response); // Exiba a resposta da solicitação no console.
-        })
+            if (response.data.success) {
+                // Save user info to localStorage
+                localStorage.setItem('loggedUser', JSON.stringify(response.data.user));
+                // Redirect to user page
+                navigate('/user'); // use 'navigate' to redirect
+            } else {
+                // Handle login error
+                console.error("Login failed:", response.data.message);
+            }
+        }).catch((error) => {
+            console.error("There was an error with the login request:", error);
+        });
     };
 
-    const handleChangeValues = (value) => {
-        // Use a função de atualização do estado para garantir que os valores antigos sejam preservados.
-        setValues(prevValue => ({
-            ...prevValue, // Mantém os valores antigos do objeto.
-            [value.target.name]: value.target.value, // Atualiza o campo correspondente com o novo valor.
-        }))
+    const handleChangeValues = (event) => {
+        setValues(prevValues => ({
+            ...prevValues,
+            [event.target.name]: event.target.value
+        }));
     };
 
     return (
-
-        <div >
+        <div>
             <form onSubmit={handleSubmit} className="login-form" id="formulario_geral">
                 <div id="Formulario">
                     <h2 id="Formulario_titulo">Bem Vindo de Volta</h2>
@@ -42,7 +49,7 @@ function FormularioLogin() {
                                 type="text"
                                 className="form-control"
                                 id="input_gmail"
-                                name="input_gmail"
+                                name="gmail"
                                 onChange={handleChangeValues}
                                 required
                             />
@@ -51,7 +58,7 @@ function FormularioLogin() {
                             <label htmlFor="input_senha" id="senha_texto">Senha:</label>
                             <input
                                 type="password"
-                                name="input_senha"
+                                name="senha"
                                 className="form-control"
                                 id="input_senha"
                                 onChange={handleChangeValues}
@@ -64,26 +71,24 @@ function FormularioLogin() {
                     <div id="continue">
                         <hr className="line" /><p>Ou Continue Com</p><hr className="line" />
                     </div>
-                    <div id= "imagens_div">
-                        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="logo_link">
-                            <img src={GoogleLogo} alt="Google Logo" class="logo" />
+                    <div id="imagens_div">
+                        <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="logo_link">
+                            <img src={GoogleLogo} alt="Google Logo" className="logo" />
                         </a>
-                        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="logo_link">
-                            <img src={AppleLogo} alt="Apple Logo" class="logo" />
+                        <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="logo_link">
+                            <img src={AppleLogo} alt="Apple Logo" className="logo" />
                         </a>
-                        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="logo_link">
-                            <img src={FacebookLogo} alt="Facebook Logo" class="logo" />
+                        <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="logo_link">
+                            <img src={FacebookLogo} alt="Facebook Logo" className="logo" />
                         </a>
                     </div>
                     <div id="cadastro">
-                        <hr className="line" /><a href="cada"><p>Nao Possuo Cadastro</p></a><hr className="line" />
+                        <hr className="line" /><a href="Registro"><p>Não Possuo Cadastro</p></a><hr className="line" />
                     </div>
-
                 </div>
             </form>
         </div>
     );
 }
 
-
-export default FormularioLogin
+export default FormularioLogin;

@@ -45,13 +45,13 @@
     margin-bottom: 20px;
 }
 
-#input_gmail,#input_senha {
+#input_gmail,
+#input_senha {
     width: 100%;
     padding: 15px;
     display: block;
     border-radius: 10px;
-    border: 1px solid #b6b6b6;
-    box-shadow: 0px 0px 4px 6px rgba(71, 71, 71, 0.31);
+    border: 1px solid #ccc;
     margin-bottom: 15px;
     box-sizing: border-box;
 }
@@ -60,33 +60,7 @@
 #gmail_texto {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 2.3vh;
-    line-height: normal;
-    color: #757575;
-    margin-bottom: 5px;
-    display: block;
-}
-.div_dupla{
-    display: flex;
-    justify-content: space-between;
-}
-
-#input_nome,#input_sobreNome,#input_dataNascimento ,#input_genero{
-    width: 100%;
-    padding: 15px;
-    display:flex;
-    border-radius: 10px;
-    border: 1px solid #b6b6b6;
-    box-shadow: 0px 0px 4px 6px rgba(71, 71, 71, 0.31);
-    margin-bottom: 15px;
-    box-sizing: border-box;
-}
-
-#nome_texto,
-#sobreNome_texto ,#dataNascimento_texto,#genero_texto{
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 2.3vh;
+    font-size: 20px;
     line-height: normal;
     color: #757575;
     margin-bottom: 5px;
@@ -101,7 +75,7 @@
 }
 
 #continue hr.line {
-    background-color: #9b9b9b;
+    background-color: #ddd;
     flex: 1;
     height: 1px;
     border: none;
@@ -123,12 +97,22 @@
     width: 100%;
 }
 
+#esqueceu_senha {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: normal;
+    text-align: right;
+    text-decoration: underline;
+    color: #0269fe;
+    margin-top: 5px;
+}
 
-#butao_criar {
+#butao_enviar {
     display: flex;
     justify-content: center;
-    width: 70%;
-    padding: 2.3vh;
+    width: 100%;
+    padding: 4vh;
     margin-top: 0.5vh;
     border-radius: 16px;
     background-color: #0269FE;
@@ -160,7 +144,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 0vh;
+    margin-top: -2vh;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 3vh;
@@ -172,18 +156,9 @@
 }
 
 #cadastro hr.line {
-    background-color: #9b9b9b;
+    background-color: #ddd;
     flex: 1;
-    height: 0.1vh;
+    height: 1px;
     border: none;
-    margin: 0 2vh;
-}
-
-#cadastro p{
-     font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 2.4vh;
-    line-height: normal;
-    margin: 0;
-    text-align: center;
+    margin: 0 10px;
 }
