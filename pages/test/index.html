@@ -8,7 +8,7 @@
 </head>
 <body>
     <!--
-        <header\>
+        <Header\>
     -->
     <header id="headerMain">
         <div id="burgerRect" onclick="">
@@ -21,11 +21,30 @@
             <svg class="burgerLine" id="two"><line x1="10" y1="10" x2="20" y2="10"/></svg>
             <svg class="burgerLine" id="three"><line x1="10" y1="15" x2="20" y2="15"/></svg>
         </div>
-        <input id="searchBar">
-        <label for="searchBar" ></label>
+        <input type="search" name="search" id="searchBar" placeholder="search">
         <span id="Title">Debatedor</span>
     </header>
 
+    <!--
+        <Post\>
+    -->
+    <div id="Feed">
+        <form id="Post" className="Publique">
+            <section>
+                <h2>Publique sua notícia & receba argumentos</h2>
+                <div>
+                    <div>
+                        <h3>Link notícia</h3>
+                        <input type="text" className="form-control" id="linkNoticia" class="inputUser">
+                    </div>
+                    <div>
+                        <h3>Descrição</h3>
+                        <textarea type="text" className="form-control" id="description" class="inputUser"></textarea>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
 
 </body>
 </html>
