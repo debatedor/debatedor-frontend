@@ -8,6 +8,7 @@ import FormularioRegistro from './pages/FormularioRegistro';
 import DetailPostWrapper from './components/DetailPostWrapper';
 import CommentDetailPage from './components/Comment';
 import Usuario from "./pages/Usuario.js"
+import Feed from "./components/Feed.js";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         </header>
         <div className="App-body">
           <Routes>
-            <Route path="/" element={<FormularioLogin />} />
+            <Route path="/" element={<Feed />} />
+            <Route path="/form" element={<FormularioLogin />} />
             <Route path="/post/:id" element={<DetailPostWrapper />} />
           </Routes>
         </div>
