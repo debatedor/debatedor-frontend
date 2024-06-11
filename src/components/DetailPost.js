@@ -5,6 +5,7 @@ import { fakePosts } from './fakePosts';
 import { useNavigate } from 'react-router-dom';
 import Comment from './Comment';
 import useVote from './useVote';
+import PostCard from './PostCard';
 
 export default function DetailPost({ postId }) {
   const [post, setPost] = useState(null);
@@ -12,13 +13,16 @@ export default function DetailPost({ postId }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [newComment, setNewComment] = useState('');
   const navigate = useNavigate();
+  
+  // Mover o hook useVote para após a definição do post
+  const { upvotes, downvotes, userVote, handleVote } = useVote(post?.upvotes || 0, post?.downvotes || 0, postId, 'posts');
 
   const handleCommentClick = () => {
     navigate(-1);
   };
 
   useEffect(() => {
-    const fetchPost = async (postId) => {
+    const fetchPost = async () => {
       try {
         const response = await axios.get(`http://localhost:3001/posts/${postId}`);
         setPost(response.data);
@@ -36,10 +40,8 @@ export default function DetailPost({ postId }) {
         }
       }
     };
-    fetchPost(postId);
+    fetchPost();
   }, [postId]);
-
-  const { upvotes, downvotes, userVote, handleVote } = useVote(post?.upvotes || 0, post?.downvotes || 0, postId, 'posts');
 
   const handleEdit = () => {
     console.log('Edit action');
@@ -78,42 +80,14 @@ export default function DetailPost({ postId }) {
 
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.postCard}>
-        <div className={styles.postHeader}>
-          <div className={styles.postUserInfo}>
-            <img src={post.userAvatar} className={styles.userAvatar} />
-              <button className={styles.userNameButton} onClick={() => {}}>
-                @{post.username}
-              </button>
-          </div>
-          <div className={styles.postDate}>
-            <p>Postado em {new Date(post.date).toLocaleDateString()}</p>
-          </div>
-          <div className={styles.menuContainer}>
-            <button className={styles.menuButton} onClick={() => setMenuOpen(!menuOpen)}>...</button>
-            {menuOpen && (
-              <div className={styles.menu}>
-                <button onClick={handleEdit}>Editar</button>
-                <button onClick={handleDelete}>Excluir</button>
-              </div>
-            )}
-          </div>
-        </div>
-        <hr className={styles.divider} />
-        <h3 className={styles.postTitle}>{post.title}</h3>
-        <a href={post.link} className={styles.postLink}>{post.link}</a>
-        <p className={styles.postContent}>{post.content}</p>
-        <div className={styles.postFooter}>
-          <div className={styles.postVotes}>
-            <button className={styles.upvoteButton} onClick={() => handleVote('upvote')}>⬆</button>
-            <span>{post.upvotes}</span>
-          </div>
-          <div className={styles.postVotes}>
-            <button className={styles.downvoteButton} onClick={() => handleVote('downvote')}>⬇</button>
-            <span>{post.downvotes}</span>
-          </div>
-        </div>
-      </div>
+      <PostCard
+        post={post}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
+        handleVote={handleVote}
+        upvotes={upvotes}
+        downvotes={downvotes}
+      />
 
       <div className={styles.commentSectionMain}>
         <div className={styles.commentSection}>
