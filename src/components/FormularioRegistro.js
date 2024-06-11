@@ -8,15 +8,16 @@ import FacebookLogo from "../image/Facebook.png"
 
 
 function FormularioRegistro() {
-    const [values, setValues] = useState({ gmail: '', senha: '' });
-    const [gmail, setGmail] = useState('');
-    const [senha, setSenha] = useState('');
+    const [values, setValues] = useState({ name: '', lastname: '', email: '', password: '', birthday: '', sex:''});
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        Axios.post("http://localhost:3001/register", {
-            gmail: values.gmail,
-            senha: values.senha
+        Axios.post("http://localhost:3131/users", {
+            name: values.name,
+            lastname: values.lastname,
+            password: values.password,
+            email: values.email,
+            // birthday: values.birthday,
         }).then((response) => {
             console.log(response); // Exiba a resposta da solicitação no console.
         })
@@ -30,27 +31,27 @@ function FormularioRegistro() {
         }))
     };
 
-    const validarDataNascimento = () => {
-        var inputDataNascimento = document.getElementById('input_dataNascimento');
-        var dataSelecionada = new Date(inputDataNascimento.value);
-        var dataAtual = new Date();
-        var dataMinima = new Date(dataAtual.getFullYear() - 18, dataAtual.getMonth(), dataAtual.getDate());
+    // const validarDataNascimento = () => {
+    //     var inputDataNascimento = document.getElementById('input_dataNascimento');
+    //     var dataSelecionada = new Date(inputDataNascimento.value);
+    //     var dataAtual = new Date();
+    //     var dataMinima = new Date(dataAtual.getFullYear() - 18, dataAtual.getMonth(), dataAtual.getDate());
 
-        if (dataSelecionada > dataMinima) {
-            alert("Você precisa ter pelo menos 18 anos para prosseguir.");
-            inputDataNascimento.value = '';
-        } else {
-            // Cria um evento simulado com os valores necessários para handleChangeValues
-            var event = {
-                target: {
-                    name: inputDataNascimento.id,
-                    value: inputDataNascimento.value
-                }
-            };
-            // Chama a função handleChangeValues com o evento simulado
-            handleChangeValues(event);
-        }
-    };
+    //     if (dataSelecionada > dataMinima) {
+    //         alert("Você precisa ter pelo menos 18 anos para prosseguir.");
+    //         inputDataNascimento.value = '';
+    //     } else {
+    //         // Cria um evento simulado com os valores necessários para handleChangeValues
+    //         var event = {
+    //             target: {
+    //                 name: inputDataNascimento.id,
+    //                 value: inputDataNascimento.value
+    //             }
+    //         };
+    //         // Chama a função handleChangeValues com o evento simulado
+    //         handleChangeValues(event);
+    //     }
+    // };
 
     return (
 
@@ -66,7 +67,7 @@ function FormularioRegistro() {
                                     type="text"
                                     className="form-control"
                                     id="input_nome"
-                                    name="input_nome"
+                                    name="name"
                                     onChange={handleChangeValues}
                                     required
                                 />
@@ -77,7 +78,7 @@ function FormularioRegistro() {
                                     type="text"
                                     className="form-control"
                                     id="input_sobreNome"
-                                    name="input_sobreNome"
+                                    name="lastname"
                                     onChange={handleChangeValues}
                                     required
                                 />
@@ -89,7 +90,7 @@ function FormularioRegistro() {
                                 type="text"
                                 className="form-control"
                                 id="input_gmail"
-                                name="input_gmail"
+                                name="email"
                                 onChange={handleChangeValues}
                                 required
                             />
@@ -100,30 +101,30 @@ function FormularioRegistro() {
                                 type="password"
                                 name="input_senha"
                                 className="form-control"
-                                id="input_senha"
+                                id="password"
                                 onChange={handleChangeValues}
                                 required
                             />
                         </div>
                         <div class="div_dupla">
-                            <div>
+                            {/* <div>
                                 <label htmlFor="input_dataNascimento" id="dataNascimento_texto">Data de Nascimento:</label>
                                 <input
                                     type="date"
                                     className="form-control"
                                     id="input_dataNascimento"
-                                    name="input_dataNascimento"
+                                    name="birthday"
                                     onChange={validarDataNascimento}
                                     required
                                 />
-                            </div>
+                            </div> */}
                             <div>
                                 <label htmlFor="input_genero" id="genero_texto">Genero:</label>
                                 <input
                                     type="text"
                                     className="form-control"
                                     id="input_genero"
-                                    name="input_genero"
+                                    name="sex"
                                     onChange={handleChangeValues}
                                     required
                                 />
