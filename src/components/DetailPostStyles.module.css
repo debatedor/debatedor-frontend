@@ -1,14 +1,13 @@
 .mainContainer {
   margin: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; 
+  align-items: flex-start; 
   position: relative;
-  /* background-color: red; */
 }
 
 .postCard {
-  width: 800px; 
+  width: 800px;
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 10px;
@@ -16,7 +15,7 @@
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  margin-bottom: 20px;
+  margin-right: 20px; 
 }
 
 .postCard:hover {
@@ -66,7 +65,7 @@
 }
 
 .divider {
-  margin: 20px 0;
+  width: 89%;
 }
 
 .postTitle {
@@ -92,26 +91,38 @@
 }
 
 .commentSectionMain {
+  width: 90%; 
   margin-top: 20px;
-  float: left; 
+  float: left;
+  padding-left: 20px;
 }
 
 .commentSection {
+  width: 120%; 
   margin-bottom: 20px;
-  /* position: absolute; */
 }
 
 .commentSection textarea {
-  width: calc(100% - 30px); 
-  max-width: 800px; 
-  height: 50px; 
-  margin-bottom: 20px; 
-  padding: 5px; 
-  font-size: 1.2em; 
-  font-weight: bold; 
+  width: calc(100% - 30px);
+  max-width: 800px;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
-.noticias, .formLabel{
-  font-size: 1.5em; 
-  font-weight: bold; 
+.noticias, .formLabel {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.commentCardLeft{
+  padding-left: 20px;
+}
+
+.alignRight {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 12%;
 }

@@ -98,13 +98,15 @@ export default function DetailPost({ postId }) {
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
           ></textarea>
-          <button
-            type="button"
-            className="btn btn-primary mt-2"
-            onClick={handleCommentSubmit}
-          >
-            Enviar Comentário
-          </button>
+          <div className={styles.alignRight}>
+            <button
+              type="button"
+              className="btn btn-primary mt-2"
+              onClick={handleCommentSubmit}
+            >
+              Enviar Comentário
+            </button>
+          </div>
 
           <div className={styles.noticias}>Notícias</div>
           <hr className={styles.divider} />
