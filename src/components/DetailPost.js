@@ -13,8 +13,7 @@ export default function DetailPost({ postId }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [newComment, setNewComment] = useState('');
   const navigate = useNavigate();
-  
-  // Mover o hook useVote para após a definição do post
+
   const { upvotes, downvotes, userVote, handleVote } = useVote(post?.upvotes || 0, post?.downvotes || 0, postId, 'posts');
 
   const handleCommentClick = () => {
@@ -91,7 +90,7 @@ export default function DetailPost({ postId }) {
 
       <div className={styles.commentSectionMain}>
         <div className={styles.commentSection}>
-          <label htmlFor="newComment" className="form-label">Faça um Comentário</label>
+          <label htmlFor="newComment" className={styles.formLabel}>Faça um Comentário</label>
           <textarea
             className="form-control"
             id="newComment"
@@ -108,8 +107,8 @@ export default function DetailPost({ postId }) {
           </button>
 
           <div className={styles.noticias}>Notícias</div>
-            <hr className={styles.divider} />
-          </div>
+          <hr className={styles.divider} />
+        </div>
       </div>
 
       <div className={styles.commentCardLeft}>

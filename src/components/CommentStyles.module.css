@@ -1,5 +1,5 @@
 .container {
-  width: 100%;
+  width: 600px;
   max-width: 400px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -11,7 +11,7 @@
 }
 
 .container:hover {
-  background-color: #cedece; 
+  background-color: #cedece;
 }
 
 .commentHeader {
@@ -25,15 +25,15 @@
   height: 50px;
   border-radius: 50%;
   margin-right: 15px;
-  background-color: #bb00ff; 
-  color: #fff; 
+  background-color: #bb00ff;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px; 
-  font-weight: bold; 
-  background-image: none !important; 
-  background-size: cover; 
+  font-size: 20px;
+  font-weight: bold;
+  background-image: none !important;
+  background-size: cover;
 }
 
 .username {
@@ -67,4 +67,28 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.commentSectionMain {
+  float: left; 
+}
+
+.commentSection textarea {
+  width: calc(100% - 30px); 
+  max-width: 370px;
+  height: 50px; 
+  margin-bottom: 10px; /* Espaçamento inferior */
+  padding: 5px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: bold; /* Fonte em negrito */
+}
+
+.commentSectionMain h3 {
+  font-size: 18px; /* Tamanho do texto "Fazer um Comentário" */
+  font-weight: bold; /* Fonte em negrito */
+}
+
+.commentSectionMain .noticias {
+  font-size: 20px; /* Tamanho do texto "Notícias" */
+  font-weight: bold; /* Fonte em negrito */
 }
