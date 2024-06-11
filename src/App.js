@@ -1,6 +1,8 @@
-import './App.css';
-import Header from './components/Header';
-import Formulario from './components/Formulario';
+import Axios from "axios";
+import React, { useState } from 'react';
+import Header from "./components/Header.js";
+import Post from "./components/Post.js";
+import './App.css'
 
 function App() {
   return (
@@ -8,9 +10,9 @@ function App() {
       <header className="App-header">
         <Header/>
       </header>
-      <body>
-        <Formulario/>
-      </body>
+      <article>
+        <Post/>
+      </article>
       <footer>
 
       </footer>
