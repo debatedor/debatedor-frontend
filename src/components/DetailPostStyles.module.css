@@ -1,0 +1,137 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+
+.postCard {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 140%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postUserInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.userNameButton {
+  background: none;
+  border: none;
+}
+
+.postDate {
+  font-size: 14px;
+  color: #888;
+}
+
+.menuContainer {
+  position: absolute; 
+  right: 0; 
+  top: 0; 
+}
+.menuButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 20px 0;
+}
+
+.postTitle {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.postLink {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.postLink:hover {
+  text-decoration: underline;
+}
+
+.postContent {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.postFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postVotes {
+  display: flex;
+  align-items: center;
+}
+
+.upvoteButton, .downvoteButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.commentSection {
+  margin-top: 20px;
+}
+
+.commentSectionMain {
+  align-self: flex-start; 
+  width: 100%; 
+}
+
+.noticias {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.commentCardLeft {
+  margin-top: 20px;
+}
