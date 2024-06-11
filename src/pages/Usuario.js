@@ -16,7 +16,7 @@ function UltimoUsuario() {
 
     const handleDeleteUser = () => {
         if (usuario) {
-            Axios.delete(`http://localhost:3001/users/${usuario.id}`)
+            Axios.delete(`http://localhost:3131/users/${usuario.id}`)
                 .then(response => {
                     localStorage.removeItem('loggedUser');
                     setUsuario(null);

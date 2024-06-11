@@ -7,22 +7,25 @@ import FacebookLogo from "../image/Facebook.png"
 import AppleLogo from "../image/Apple.png"
 
 function FormularioLogin() {
-    const [values, setValues] = useState({ gmail: '', senha: '' });
+    const [values, setValues] = useState({ email: '', password: '' });
     const navigate = useNavigate(); // updated the variable name to 'navigate' to follow conventions
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        Axios.post("http://localhost:3001/login", {
-            gmail: values.gmail,
-            senha: values.senha
+        Axios.post("http://localhost:3131/sessions", {
+            email: values.email,
+            password: values.password
         }).then((response) => {
             if (response.data.success) {
                 // Save user info to localStorage
                 localStorage.setItem('loggedUser', JSON.stringify(response.data.user));
                 // Redirect to user page
-                navigate('/user'); // use 'navigate' to redirect
+                navigate('/'); // use 'navigate' to redirect
             } else {
                 // Handle login error
+                console.log(response.data)
+                console.log(values)
+
                 console.error("Login failed:", response.data.message);
             }
         }).catch((error) => {
@@ -49,7 +52,7 @@ function FormularioLogin() {
                                 type="text"
                                 className="form-control"
                                 id="input_gmail"
-                                name="gmail"
+                                name="email"
                                 onChange={handleChangeValues}
                                 required
                             />
@@ -58,7 +61,7 @@ function FormularioLogin() {
                             <label htmlFor="input_senha" id="senha_texto">Senha:</label>
                             <input
                                 type="password"
-                                name="senha"
+                                name="password"
                                 className="form-control"
                                 id="input_senha"
                                 onChange={handleChangeValues}

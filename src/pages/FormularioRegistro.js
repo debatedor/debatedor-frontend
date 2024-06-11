@@ -7,28 +7,31 @@ import FacebookLogo from "../image/Facebook.png"
 
 function FormularioRegistro() {
     const [values, setValues] = useState({
-        nome: '',
-        sobreNome: '',
-        gmail: '',
-        senha: '',
-        dataNascimento: '',
-        genero: ''
+        name: '',
+        lastname: '',
+        email: '',
+        password: '',
+        birthday: '',
+        sex: ''
     });
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        Axios.post("http://localhost:3001/register", values)
+        Axios.post("http://localhost:3131/users", values)
             .then((response) => {
                 console.log(response); // Exiba a resposta da solicitação no console.
                 if (response.data.success) {
                     localStorage.setItem('loggedUser', JSON.stringify(response.data.user));
                     window.location.href = '/user';
                 } else {
+
                     // Handle registration error
                     console.error("Registration failed:", response.data.message);
                 }
             })
             .catch((error) => {
+                console.log(values)
+
                 console.error("There was an error with the registration request:", error);
             });
     };
@@ -68,7 +71,7 @@ function FormularioRegistro() {
                                     type="text"
                                     className="form-control"
                                     id="nome"
-                                    name="nome"
+                                    name="name"
                                     onChange={handleChangeValues}
                                     required
                                 />
@@ -79,7 +82,7 @@ function FormularioRegistro() {
                                     type="text"
                                     className="form-control"
                                     id="sobreNome"
-                                    name="sobreNome"
+                                    name="lastname"
                                     onChange={handleChangeValues}
                                     required
                                 />
@@ -91,7 +94,7 @@ function FormularioRegistro() {
                                 type="text"
                                 className="form-control"
                                 id="gmail"
-                                name="gmail"
+                                name="email"
                                 onChange={handleChangeValues}
                                 required
                             />
@@ -100,9 +103,9 @@ function FormularioRegistro() {
                             <label htmlFor="senha" id="senha_texto">Senha:</label>
                             <input
                                 type="password"
-                                name="senha"
+                                name="password"
                                 className="form-control"
-                                id="senha"
+                                id="password"
                                 onChange={handleChangeValues}
                                 required
                             />
@@ -114,9 +117,8 @@ function FormularioRegistro() {
                                     type="date"
                                     className="form-control"
                                     id="dataNascimento"
-                                    name="dataNascimento"
+                                    name="birthday"
                                     onChange={validarDataNascimento}
-                                    required
                                 />
                             </div>
                             <div>
@@ -125,9 +127,8 @@ function FormularioRegistro() {
                                     type="text"
                                     className="form-control"
                                     id="genero"
-                                    name="genero"
+                                    name="sex"
                                     onChange={handleChangeValues}
-                                    required
                                 />
                             </div>
                         </div>

@@ -21,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Feed />} />
             <Route path="/form" element={<FormularioLogin />} />
+            <Route path="/register" element = {<FormularioRegistro/>}></Route>
             <Route path="/post/:id" element={<DetailPostWrapper />} />
           </Routes>
         </div>
