@@ -1,14 +1,23 @@
 import Axios from "axios";
 import React, { useState } from 'react';
 import Header from "./components/Header";
-import "./feed.css";
+import Post from "./components/Post";
+import './App.css'
 
-function Feed() {
+function App() {
     return (
-        <header>
-            <Header/>
-        </header>
+        <div className="App">
+            <header className="App-header">
+                <Header/>
+            </header>
+            <body>
+                <Post/>
+            </body>
+            <footer>
+
+            </footer>
+        </div>
     );
 }
 
-export default Feed;
+export default App;

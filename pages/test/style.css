@@ -2,16 +2,17 @@ body {
     margin:0px;
 }
 
+/* Header.css */
+
 #headerMain {
-    position:sticky;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: auto;
+
     top:0px;
     left:0px;
 
-    margin:0px;
-    border:0px;
-    padding:0px;
-
-    width: 1440px;
     height: 92px;
     background-color: #000f46;
 }
@@ -19,11 +20,9 @@ body {
 #burgerRect {
     border-style:solid;
     border-color:gray;
-    position: absolute;
-    left: 5%;
-    top: 30px;
-    width: 24px;
-    height: 24px;
+    margin-left: 5vh;
+    width: 3vh;
+    height: 3vh;
     border-radius: 9px;
 }
 
@@ -55,12 +54,9 @@ body {
 }
 
 #searchBar {
-    position: relative;
-    left: 25%;
-    top: 0px;
     border-radius: 5px;
 
-    width: 471px;
+    padding-right: 45vh;
     height: 25px;
     background-color: #ffffff;
     font-family: Poppins;
@@ -71,11 +67,8 @@ body {
 }
 
 #Title {
-    position: relative;
-    left: 30%;
-    top: 13px;
+    padding-right: 10vh;
 
-    width: 286px;
     height: 55px;
 
     font-family: "Playfair Display";
@@ -85,4 +78,38 @@ body {
     line-height: 55px;
 
     color: #ffffff;
+}
+
+
+/* Post.css */
+#Post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Post section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Post section div {
+    border-radius: 13px;
+    border-color: #757575;
+    box-sizing: border-box;
+}
+
+.inputUser {
+    border-radius: 3px;
+    padding-right: 40vh;
+}
+
+#description {
+    padding-bottom: 40vh;
+}
+
+#Post div h3 {
+    font-size: 0.95em;
+    color: #757575;
 }
