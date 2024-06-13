@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import GoogleLogo from "../image/Google.png"
 import FacebookLogo from "../image/Facebook.png"
 import AppleLogo from "../image/Apple.png"
+import { context } from '../context';
 
 function FormularioLogin() {
     const [values, setValues] = useState({ email: '', password: '' });
@@ -17,19 +18,20 @@ function FormularioLogin() {
             password: values.password
         }).then((response) => {
             if (response.data.success) {
+                context.setAccessToken(response.data.access_token)
                 // Save user info to localStorage
                 localStorage.setItem('loggedUser', JSON.stringify(response.data.user));
                 // Redirect to user page
                 navigate('/'); // use 'navigate' to redirect
             } else {
                 // Handle login error
-                console.log(response.data)
-                console.log(values)
-
                 console.error("Login failed:", response.data.message);
             }
         }).catch((error) => {
             console.error("There was an error with the login request:", error);
+            
+            alert(error.response.data.errors.reduce((accumulator, currentValue) => accumulator + '- ' + currentValue.message + '\n', ""))
+
         });
     };
 

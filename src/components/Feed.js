@@ -4,19 +4,26 @@ import { fakePosts } from './fakePosts';
 import { useNavigate } from "react-router-dom";
 import Style from  "./Post.css"
 import PostCard from "./PostCard";
+import { context } from "../context";
 
 export default function Feed() {
     const [posts, setPosts] = useState([]);
-    const [values, setValues] = useState({linkNoticia: '', description: ''});
+    const [values, setValues] = useState({source: '', description: '', question: ''});
     const navigate = useNavigate();
+
+    const config = {
+        headers: { Authorization: `Bearer ${context.getAccessToken()}` }
+    } 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        Axios.post("http://localhost:3001/Feed", {
-            linkNoticia: values.linkNoticia,
-            description: values.description
-        }).then((response) => {
-            console.log(response);
+        console.log(context.getAccessToken())
+        Axios.post("http://localhost:3131/create-post", {
+            source: values.source,
+            description: values.description,
+            question: values.question
+        }, config).then((response) => {
+            console.log(response.data.errors);
         });
     };
 
@@ -43,7 +50,7 @@ export default function Feed() {
     useEffect(() => {
         const fetchPost = async () => {
           try {
-            const response = await Axios.get(`http://localhost:3001/posts`);
+            const response = await Axios.get(`http://localhost:3131/posts`);
             setPosts(response.data);
           } catch (error) {
             console.error('Erro ao buscar detalhes da postagem:', error);
@@ -70,6 +77,10 @@ export default function Feed() {
                         <div>
                             <h3>Descrição</h3>
                             <textarea type="text" className="inputUser" id="description" name="description" onChange={handleChange}></textarea>
+                        </div>
+                        <div>
+                            <h3>Pergunta de sim ou não</h3>
+                            <input type="text" className="inputUser" id="question" name="question" onChange={handleChange} />
                         </div>
                     </div>
                 </section>

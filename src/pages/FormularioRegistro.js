@@ -4,6 +4,7 @@ import "../css/Registro.css"
 import GoogleLogo from "../image/Google.png"
 import AppleLogo from "../image/Apple.png"
 import FacebookLogo from "../image/Facebook.png"
+import { context } from "../context";
 
 function FormularioRegistro() {
     const [values, setValues] = useState({
@@ -21,18 +22,22 @@ function FormularioRegistro() {
             .then((response) => {
                 console.log(response); // Exiba a resposta da solicitação no console.
                 if (response.data.success) {
+                    console.log(response.data)
                     localStorage.setItem('loggedUser', JSON.stringify(response.data.user));
                     window.location.href = '/user';
+                    context.setAccessToken(response.data.access_token)
+                    console.log(context.getAccessToken())
                 } else {
-
                     // Handle registration error
-                    console.error("Registration failed:", response.data.message);
+                    console.error("Registration failed:", response.data.errors);
+                    
                 }
             })
             .catch((error) => {
                 console.log(values)
 
-                console.error("There was an error with the registration request:", error);
+                console.error("There was an error with the registration request:", error.response.data.errors);
+                alert(error.response.data.errors.reduce((accumulator, currentValue) => accumulator + '- ' + currentValue.message + '\n', ""))
             });
     };
 

@@ -35,8 +35,8 @@ export default function PostCard({ post, handleEdit, handleDelete, handleVote, u
         </div>
         <hr className={styles.divider} />
         <h3 className={styles.postTitle}>{post.title}</h3>
-        <a href={post.link} className={styles.postLink} onClick={(e) => e.stopPropagation()}>{post.link}</a>
-        <p className={styles.postContent}>{post.content}</p>
+        <a href={post.source} className={styles.postLink} onClick={(e) => e.stopPropagation()}>{post.link}</a>
+        <p className={styles.postContent}>{post.description}</p>
         <div className={styles.postFooter}>
           <div className={styles.postVotes}>
             <button className={styles.upvoteButton} onClick={(e) => { e.stopPropagation(); handleVote('upvote'); }}>⬆</button>
