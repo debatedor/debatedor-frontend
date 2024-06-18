@@ -24,6 +24,9 @@ export default function Feed() {
             question: values.question
         }, config).then((response) => {
             console.log(response.data.errors);
+            if(response.data.status.error) {
+
+            }
         });
     };
 
@@ -72,7 +75,7 @@ export default function Feed() {
                     <div>
                         <div>
                             <h3>Link notícia</h3>
-                            <input type="text" className="inputUser" id="linkNoticia" name="linkNoticia" onChange={handleChange} />
+                            <input type="text" className="inputUser" id="source" name="source" onChange={handleChange} />
                         </div>
                         <div>
                             <h3>Descrição</h3>
