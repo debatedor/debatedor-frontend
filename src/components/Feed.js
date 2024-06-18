@@ -24,9 +24,6 @@ export default function Feed() {
             question: values.question
         }, config).then((response) => {
             console.log(response.data.errors);
-            if(response.data.status.error) {
-
-            }
         });
     };
 

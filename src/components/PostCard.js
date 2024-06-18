@@ -21,7 +21,7 @@ export default function PostCard({ post, handleEdit, handleDelete, handleVote, u
             </button>
           </div>
           <div className={styles.postDate}>
-            <p>Postado em {new Date(post.date).toLocaleDateString()}</p>
+            <p>Postado em {new Date(post.createdAt).toLocaleDateString()}</p>
           </div>
           <div className={styles.menuContainer}>
             <button className={styles.menuButton} onClick={(e) => { e.stopPropagation(); setMenuOpen(!menuOpen); }}>...</button>
