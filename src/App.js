@@ -8,7 +8,7 @@ import FormularioRegistro from './pages/FormularioRegistro';
 import DetailPostWrapper from './components/DetailPostWrapper';
 import CommentDetailPage from './components/Comment';
 import Usuario from "./pages/Usuario.js"
-import Feed from "./components/Feed.js";
+import Feed from "./pages/Feed.js";
 
 function App() {
   return (

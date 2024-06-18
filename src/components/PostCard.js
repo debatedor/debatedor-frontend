@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './DetailPostStyles.module.css';
+import styles from '../css/DetailPostStyles.module.css';
 
 export default function PostCard({ post, handleEdit, handleDelete, handleVote, upvotes, downvotes }) {
   const [menuOpen, setMenuOpen] = React.useState(false);

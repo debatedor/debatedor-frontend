@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; 
-import commentStyle from './CommentStyles.module.css';
+import commentStyle from '../css/CommentStyles.module.css';
 import useVote from './useVote';
 
 export default function Comment({ comment }) {

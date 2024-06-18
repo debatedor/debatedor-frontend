@@ -1,9 +1,9 @@
 import Axios from "axios";
 import React, { useState, useEffect } from 'react';
-import { fakePosts } from './fakePosts';
+import { fakePosts } from '../components/fakePosts';
 import { useNavigate } from "react-router-dom";
-import Style from  "./Post.css"
-import PostCard from "./PostCard";
+import Style from  "../css/Post.css"
+import PostCard from "../components/PostCard";
 
 export default function Feed() {
     const [posts, setPosts] = useState([]);

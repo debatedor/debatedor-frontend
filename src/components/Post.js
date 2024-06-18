@@ -1,6 +1,6 @@
 import Axios from "axios";
 import React, { useState } from 'react';
-import "./Post.css"
+import "../css/Post.css"
 
 function Post() {
     const [values, setValues] = useState({linkNoticia: '',description: ''});
