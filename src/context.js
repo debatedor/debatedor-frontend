@@ -1,6 +1,9 @@
+import TokenManager from './components/TokenManager';
+
 class Context {
     constructor(access_token){
-        this.access_token = access_token
+        this.tokenManager = new TokenManager();
+        this.access_token = this.tokenManager.getToken();
     }
 
     getAccessToken(){
@@ -8,7 +11,7 @@ class Context {
     }
 
     setAccessToken(access_token){
-        this.access_token = access_token
+        this.tokenManager.setToken(access_token);
     }
 }
 
