@@ -6,8 +6,6 @@ import Header from './components/Header';
 import FormularioLogin from './pages/FormularioLogin.js';
 import FormularioRegistro from './pages/FormularioRegistro';
 import DetailPostWrapper from './components/DetailPostWrapper';
-import CommentDetailPage from './components/Comment';
-import Usuario from "./pages/Usuario.js"
 import Feed from "./components/Feed.js";
 
 function App() {
@@ -20,7 +18,7 @@ function App() {
         <div className="App-body">
           <Routes>
             <Route path="/" element={<Feed />} />
-            <Route path="/form" element={<FormularioLogin />} />
+            <Route path="/login" element={<FormularioLogin />} />
             <Route path="/register" element = {<FormularioRegistro/>}></Route>
             <Route path="/post/:id" element={<DetailPostWrapper />} />
           </Routes>
@@ -33,10 +31,3 @@ function App() {
 }
 
 export default App;
-/*<Routes>
-  <Route path="/" element={<FormularioLogin />} />
-  <Route path="/Registro" element={<FormularioRegistro />} />
-  <Route path="/post/:id" element={<DetailPostWrapper />} />
-  <Route path="/comment/:id" element={<CommentDetailPage />} />
-  <Route path="/usuario" element={<Usuario />} />
-</Routes>*/
