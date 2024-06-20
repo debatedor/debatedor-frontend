@@ -1,4 +1,4 @@
-import { Axios } from "axios";
+import Axios from "axios";
 import { useState } from "react";
 import { authorizationConfig } from "../../../http/auth/authorization-configuration";
 import styles from "./PostForm.module.css"
