@@ -17,7 +17,8 @@ function FormularioLogin() {
             email: values.email,
             password: values.password
         }).then((response) => {
-            if (response.data.success) {
+            console.log(response)
+            if (response.status === 200) {
                 context.setAccessToken(response.data.access_token)
                 // Save user info to localStorage
                 localStorage.setItem('loggedUser', JSON.stringify(response.data.user));
