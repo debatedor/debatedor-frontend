@@ -1,0 +1,36 @@
+.commentSectionMain {
+  width: 90%; 
+  margin-top: 20px;
+  float: left;
+  padding-left: 20px;
+}
+
+.commentSection {
+  width: 120%; 
+  margin-bottom: 20px;
+}
+
+.commentSection textarea {
+  width: calc(100% - 30px);
+  max-width: 800px;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.noticias, .formLabel {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.commentCardLeft{
+  padding-left: 20px;
+}
+
+.alignRight {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 12%;
+}

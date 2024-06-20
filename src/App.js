@@ -3,10 +3,11 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import FormularioLogin from './pages/FormularioLogin.js';
-import FormularioRegistro from './pages/FormularioRegistro';
-import DetailPostWrapper from './components/DetailPostWrapper';
-import Feed from "./components/Feed.js";
+import Feed from "./pages/feed/Feed.js";
+import Login from "./pages/login/Login.js";
+import Registration from "./pages/registration/Registration.js";
+import MaximizedPostWrapper from "./pages/maximized-post/MaximizedPostWrapper.js";
+
 
 function App() {
   return (
@@ -18,9 +19,9 @@ function App() {
         <div className="App-body">
           <Routes>
             <Route path="/" element={<Feed />} />
-            <Route path="/login" element={<FormularioLogin />} />
-            <Route path="/register" element = {<FormularioRegistro/>}></Route>
-            <Route path="/post/:id" element={<DetailPostWrapper />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element = {<Registration/>}></Route>
+            <Route path="/post/:id" element={<MaximizedPostWrapper />} />
           </Routes>
         </div>
         <footer>

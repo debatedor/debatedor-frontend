@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import commentStyle from './CommentStyles.module.css';
-import useVote from './useVote';
+import useVote from '../utils/useVote';
 
 export default function Comment({ comment }) {
   const navigate = useNavigate(); 
@@ -14,7 +14,6 @@ export default function Comment({ comment }) {
   return (
     <div className={commentStyle.container}>
       <div className={commentStyle.commentHeader}>
-        <img src={comment.userAvatar} className={commentStyle.userAvatar}/>
         <p className={commentStyle.username}>@{comment.username}</p>
       </div>
       <hr className={commentStyle.divider} />

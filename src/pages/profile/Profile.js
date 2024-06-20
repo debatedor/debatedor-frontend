@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
-import "../css/Usuario.css";
+import "./Profile.css";
 
-function UltimoUsuario() {
+function Profile() {
     const [usuario, setUsuario] = useState(null);
 
     useEffect(() => {
@@ -53,4 +53,4 @@ function UltimoUsuario() {
     );
 }
 
-export default UltimoUsuario;
+export default Profile;

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import styles from './DetailPostStyles.module.css';
+import styles from './MaximizedPostStyles.module.css';
 import axios from 'axios';
-import { fakePosts } from './fakePosts';
 import { useNavigate } from 'react-router-dom';
 import Comment from './Comment';
-import useVote from './useVote';
-import PostCard from './PostCard';
+import useVote from '../utils/useVote';
+import PostCard from '../../feed/components/PostCard';
 
 export default function DetailPost({ postId }) {
   const [post, setPost] = useState(null);
@@ -23,20 +22,14 @@ export default function DetailPost({ postId }) {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/posts/${postId}`);
-        setPost(response.data);
+        const response = await axios.get(`http://localhost:3131/find-post-by-id/?id=${postId}`);
+        setPost({
+          question: response.data.title
+        });
 
-        const commentsResponse = await axios.get(`http://localhost:3001/posts/${postId}/comments`);
-        setComments(commentsResponse.data);
+        setComments(response.data.comments);
       } catch (error) {
         console.error('Erro ao buscar detalhes da postagem:', error);
-        const fakePost = fakePosts.find(p => p.id === parseInt(postId));
-        if (fakePost) {
-          setPost(fakePost);
-          setComments([fakePost]);
-        } else {
-          console.error('Postagem falsa não encontrada para o ID:', postId);
-        }
       }
     };
     fetchPost();

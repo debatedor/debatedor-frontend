@@ -1,29 +1,41 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './DetailPostStyles.module.css';
+import styles from './PostCard.module.css';
 
-export default function PostCard({ post, handleEdit, handleDelete, handleVote, upvotes, downvotes }) {
-  const [menuOpen, setMenuOpen] = React.useState(false);
+export default function PostCard({ post, upvotes, downvotes }) {
+  // const [menuOpen, setMenuOpen] = React.useState(false);
   const navigate = useNavigate();
 
   const handleCardClick = () => {
     navigate(`/post/${post.id}`);
   };
 
+    const handleVote = (postId, type) => {
+        // lógica para manipular votos
+        console.log(`Post ${postId} votado: ${type}`);
+    };
+
+    // const handleEdit = (postId) => {
+    //     console.log(`Editar post ${postId}`);
+    // };
+
+    // const handleDelete = (postId) => {
+    //     console.log(`Excluir post ${postId}`);
+    // };
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.postCard} onClick={handleCardClick}>
         <div className={styles.postHeader}>
           <div className={styles.postUserInfo}>
-            <img src={post.userAva} className={styles.userAvatar} />
             <button className={styles.userNameButton} onClick={(e) => e.stopPropagation()}>
-              @{post.username}
+              @{post.publisher.name + " " + post.publisher.lastname}
             </button>
           </div>
           <div className={styles.postDate}>
-            <p>Postado em {new Date(post.createdAt).toLocaleDateString()}</p>
+            <p>Postado em {post.createdAt}</p>
           </div>
-          <div className={styles.menuContainer}>
+          {/* <div className={styles.menuContainer}>
             <button className={styles.menuButton} onClick={(e) => { e.stopPropagation(); setMenuOpen(!menuOpen); }}>...</button>
             {menuOpen && (
               <div className={styles.menu}>
@@ -31,7 +43,7 @@ export default function PostCard({ post, handleEdit, handleDelete, handleVote, u
                 <button onClick={(e) => { e.stopPropagation(); handleDelete(); }}>Excluir</button>
               </div>
             )}
-          </div>
+          </div> */}
         </div>
         <hr className={styles.divider} />
         <h3 className={styles.postTitle}>{post.title}</h3>

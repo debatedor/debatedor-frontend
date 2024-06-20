@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
-import "../css/Login.css";
+import "./Login.css";
 import { useNavigate } from 'react-router-dom';
-import GoogleLogo from "../image/Google.png"
-import FacebookLogo from "../image/Facebook.png"
-import AppleLogo from "../image/Apple.png"
-import { context } from '../context';
+import GoogleLogo from "../../image/Google.png"
+import FacebookLogo from "../../image/Facebook.png"
+import AppleLogo from "../../image/Apple.png"
+import { tokenManager } from '../../http/auth/TokenManager';
 
-function FormularioLogin() {
+function Login() {
     const [values, setValues] = useState({ email: '', password: '' });
     const navigate = useNavigate(); // updated the variable name to 'navigate' to follow conventions
 
@@ -19,7 +19,7 @@ function FormularioLogin() {
         }).then((response) => {
             console.log(response)
             if (response.status === 200) {
-                context.setAccessToken(response.data.access_token)
+                tokenManager.setToken(response.data.access_token)
                 // Save user info to localStorage
                 localStorage.setItem('loggedUser', JSON.stringify(response.data.user));
                 // Redirect to user page
@@ -27,6 +27,8 @@ function FormularioLogin() {
             } else {
                 // Handle login error
                 console.error("Login failed:", response.data.message);
+                alert(response.data.message)
+                
             }
         }).catch((error) => {
             console.error("There was an error with the login request:", error);
@@ -97,4 +99,4 @@ function FormularioLogin() {
     );
 }
 
-export default FormularioLogin;
+export default Login;

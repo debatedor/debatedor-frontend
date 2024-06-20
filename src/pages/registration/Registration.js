@@ -1,41 +1,37 @@
 import Axios from "axios";
 import React, { useState } from 'react';
-import "../css/Registro.css"
-import GoogleLogo from "../image/Google.png"
-import AppleLogo from "../image/Apple.png"
-import FacebookLogo from "../image/Facebook.png"
-import { context } from "../context";
+import "./Registration.css"
+import GoogleLogo from "../../image/Google.png"
+import AppleLogo from "../../image/Apple.png"
+import FacebookLogo from "../../image/Facebook.png"
+import { tokenManager } from "../../http/auth/TokenManager";
 
-function FormularioRegistro() {
+function Registration() {
     const [values, setValues] = useState({
         name: '',
         lastname: '',
         email: '',
         password: '',
         birthday: '',
-        sex: ''
     });
 
     const handleSubmit = (event) => {
         event.preventDefault();
         Axios.post("http://localhost:3131/users", values)
             .then((response) => {
+                console.log(values.birthday)
                 console.log(response); // Exiba a resposta da solicitação no console.
-                if (response.data.success) {
-                    console.log(response.data)
+                if (response.status === 201) {
+                    alert("Usuario cadastrado com sucesso!")
                     localStorage.setItem('loggedUser', JSON.stringify(response.data.user));
-                    window.location.href = '/user';
-                    context.setAccessToken(response.data.access_token)
-                    console.log(context.getAccessToken())
+                    window.location.href = '/';
+                    tokenManager.setToken(response.data.access_token)
                 } else {
                     // Handle registration error
-                    console.error("Registration failed:", response.data.errors);
-                    
+                    console.error("Registration failed:", response.data.errors);                   
                 }
             })
             .catch((error) => {
-                console.log(values)
-
                 console.error("There was an error with the registration request:", error.response.data.errors);
                 alert(error.response.data.errors.reduce((accumulator, currentValue) => accumulator + '- ' + currentValue.message + '\n', ""))
             });
@@ -82,7 +78,7 @@ function FormularioRegistro() {
                                 />
                             </div>
                             <div>
-                                <label htmlFor="sobreNome" id="sobreNome_texto">Sobre Nome:</label>
+                                <label htmlFor="sobreNome" id="sobreNome_texto">Sobrenome:</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -94,7 +90,7 @@ function FormularioRegistro() {
                             </div>
                         </div>
                         <div id="div_gmail">
-                            <label htmlFor="gmail" id="gmail_texto">Gmail de Usuário:</label>
+                            <label htmlFor="gmail" id="gmail_texto">E-mail:</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -124,16 +120,7 @@ function FormularioRegistro() {
                                     id="dataNascimento"
                                     name="birthday"
                                     onChange={validarDataNascimento}
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="genero" id="genero_texto">Genero:</label>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    id="genero"
-                                    name="sex"
-                                    onChange={handleChangeValues}
+                                    required
                                 />
                             </div>
                         </div>
@@ -162,4 +149,4 @@ function FormularioRegistro() {
     );
 }
 
-export default FormularioRegistro;
+export default Registration;

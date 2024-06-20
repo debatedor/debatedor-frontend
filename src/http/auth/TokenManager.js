@@ -12,5 +12,5 @@ class TokenManager {
     }
   }
   
-  export default TokenManager;
+  export const tokenManager = new TokenManager();
   
