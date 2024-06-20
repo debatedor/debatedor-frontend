@@ -3,11 +3,10 @@ import TokenManager from './components/TokenManager';
 class Context {
     constructor(access_token){
         this.tokenManager = new TokenManager();
-        this.access_token = this.tokenManager.getToken();
     }
 
     getAccessToken(){
-        return this.access_token
+        return this.tokenManager.getToken();
     }
 
     setAccessToken(access_token){
