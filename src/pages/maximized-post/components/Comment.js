@@ -14,21 +14,21 @@ export default function Comment({ comment }) {
   return (
     <div className={commentStyle.container}>
       <div className={commentStyle.commentHeader}>
-        <p className={commentStyle.username}>@{comment.username}</p>
+        <p className={commentStyle.username}>@{comment.publisher.name + " " +  comment.publisher.lastname}</p>
       </div>
       <hr className={commentStyle.divider} />
       <div className={commentStyle.commentContent}>
-        <p>{comment.content}</p>
+        <p>{comment.argument}</p>
       </div>
       <div className={commentStyle.postFooter}>
-        <div className={commentStyle.postVotes}>
+        {/* <div className={commentStyle.postVotes}>
           <button className={commentStyle.upvoteButton} onClick={() => handleVote('upvote')}>⬆</button>
           <span>{comment.upvotes}</span>
         </div>
         <div className={commentStyle.postVotes}>
           <button className={commentStyle.downvoteButton} onClick={() => handleVote('downvote')}>⬇</button>
           <span>{comment.downvotes}</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );

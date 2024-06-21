@@ -51,14 +51,14 @@ export default function PostCard({ post, upvotes, downvotes }) {
         <p className={styles.postContent}>{post.description}</p>
         <h1 className={styles.postContent}>{post.question}</h1>
         <div className={styles.postFooter}>
-          <div className={styles.postVotes}>
+          {/* <div className={styles.postVotes}>
             <button className={styles.upvoteButton} onClick={(e) => { e.stopPropagation(); handleVote('upvote'); }}>⬆</button>
             <span>{upvotes}</span>
           </div>
           <div className={styles.postVotes}>
             <button className={styles.downvoteButton} onClick={(e) => { e.stopPropagation(); handleVote('downvote'); }}>⬇</button>
             <span>{downvotes}</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
