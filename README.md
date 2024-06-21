@@ -3,6 +3,8 @@
 ### 🎬 Video do projeto rodando:
 https://youtu.be/R3nk2A4OLHQ
 
+---
+
 ### 🚀 Como rodar o projeto na sua máquina
 Para rodar o projeto você vai precisar o npm instalado na sua máquina
 
@@ -18,6 +20,8 @@ Para rodar o projeto você vai precisar o npm instalado na sua máquina
 4. ✅ Rode o projeto com:
 ```npm start```
 (vai estar rodando na porta 3000)
+
+---
 
 ### 👨‍💻 Contribuidores
 
