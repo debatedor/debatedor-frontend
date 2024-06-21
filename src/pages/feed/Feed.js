@@ -15,6 +15,9 @@ export default function Feed() {
             console.log(response.data)
           } catch (error) {
             console.error('Erro ao buscar detalhes da postagem:', error);
+            if(error.response.data.errors){
+                alert(error.response.data.errors.reduce((accumulator, currentValue) => accumulator + '- ' + currentValue.message + '\n', ""))
+              }  
           }
         };
 

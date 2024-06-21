@@ -19,8 +19,12 @@ export default function PostForm(){
             }
         }).catch((error)=>{
             console.error("Houve um problema com a requisição de criar postagem:")
-            alert(error.response.data.errors.reduce((accumulator, currentValue) => accumulator + '- ' + currentValue.message + '\n', ""))
-        });
+            if(error.response.status === 401) {
+                alert('Você não está autenticado')
+                }
+            if(error.response.data.errors){
+                alert(error.response.data.errors.reduce((accumulator, currentValue) => accumulator + '- ' + currentValue.message + '\n', ""))
+              }          });
     };
 
     const handleChange = (value) => {
