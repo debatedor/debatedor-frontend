@@ -25,7 +25,7 @@ export default function Feed() {
     return (
         <div id="Feed">
 
-            <PostForm className = {}/>
+            <PostForm/>
             
             <div className={Style.divider}></div>
 
